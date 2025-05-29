@@ -84,7 +84,8 @@ const PainPointsSection = () => {
             backgroundSize: "40px 40px",
           }}
         />
-      </div>      <div className="responsive-container relative z-10">
+      </div>{" "}
+      <div className="responsive-container relative z-10">
         <motion.div
           className="text-center mb-12 sm:mb-16 px-4 sm:px-0"
           initial={{ opacity: 0, y: 30 }}

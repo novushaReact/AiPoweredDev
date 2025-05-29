@@ -82,7 +82,8 @@ const TeamSection = () => {
     },
   };
 
-  return (    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-slate-800 to-slate-900 text-white relative overflow-hidden">
+  return (
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-slate-800 to-slate-900 text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-cyan-500/5 rounded-full blur-3xl" />

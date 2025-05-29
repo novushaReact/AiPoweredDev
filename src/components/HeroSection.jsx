@@ -105,7 +105,8 @@ const HeroSection = () => {
             transition={{ duration: 2, delay: 1.5 }}
           />
         </svg>
-      </div>      <div className="responsive-container py-12 sm:py-16 md:py-20 lg:py-24 relative z-10">
+      </div>{" "}
+      <div className="responsive-container py-12 sm:py-16 md:py-20 lg:py-24 relative z-10">
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-responsive-y">
           {/* Authority Badge */}
           <motion.div
@@ -188,16 +189,28 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 1.2 }}
           >
             <div>
-              <div className="text-2xl sm:text-3xl font-bold text-cyan-400">68%</div>
-              <div className="text-gray-300 text-xs sm:text-sm">Faster Delivery</div>
+              <div className="text-2xl sm:text-3xl font-bold text-cyan-400">
+                68%
+              </div>
+              <div className="text-gray-300 text-xs sm:text-sm">
+                Faster Delivery
+              </div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-bold text-purple-400">99.8%</div>
-              <div className="text-gray-300 text-xs sm:text-sm">Client Satisfaction</div>
+              <div className="text-2xl sm:text-3xl font-bold text-purple-400">
+                99.8%
+              </div>
+              <div className="text-gray-300 text-xs sm:text-sm">
+                Client Satisfaction
+              </div>
             </div>
             <div className="col-span-2 lg:col-span-1">
-              <div className="text-2xl sm:text-3xl font-bold text-green-400">500+</div>
-              <div className="text-gray-300 text-xs sm:text-sm">Projects Delivered</div>
+              <div className="text-2xl sm:text-3xl font-bold text-green-400">
+                500+
+              </div>
+              <div className="text-gray-300 text-xs sm:text-sm">
+                Projects Delivered
+              </div>
             </div>
           </motion.div>
         </div>

@@ -80,7 +80,8 @@ const PartnershipsSection = () => {
             backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px)`,
           }}
         />
-      </div>      <div className="responsive-container relative z-10">
+      </div>
+      <div className="responsive-container relative z-10">
         {/* Header */}
         <motion.div
           className="text-center mb-12 sm:mb-16 px-4 sm:px-0"
@@ -99,112 +100,95 @@ const PartnershipsSection = () => {
           </p>
         </motion.div>
 
-        {/* Certifications Section */}
+        {/* Partner Logos */}
         <motion.div
-          className="mb-12 sm:mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 justify-items-center items-center mb-8 sm:mb-12"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h3 className="text-2xl font-bold text-center mb-8">
-            Security & Compliance Certifications
-          </h3>
+          {partners.map((partner, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className="group relative"
+            >
+              <motion.div
+                className="bg-slate-700/30 backdrop-blur-sm border border-slate-600 rounded-xl p-6 flex flex-col items-center justify-center h-24 transition-all duration-300 hover:border-slate-500 hover:bg-slate-700/50"
+                variants={logoVariants}
+                initial="rest"
+                whileHover="hover"
+              >
+                {/* Logo */}
+                <div className="text-2xl mb-2">{partner.logo}</div>
+                <div className="text-xs text-gray-400 text-center font-medium">
+                  {partner.name}
+                </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {certifications.map((cert, index) => {
-              const IconComponent = cert.icon;
-              return (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="group"
-                >
-                  <div className="bg-slate-700/50 backdrop-blur-sm border border-slate-600 rounded-2xl p-6 text-center h-full transition-all duration-300 hover:border-slate-500 hover:bg-slate-700/70 hover:transform hover:scale-105">
-                    {/* Icon */}
-                    <div
-                      className={`w-16 h-16 rounded-xl bg-gradient-to-br ${cert.color} p-4 mb-4 mx-auto group-hover:scale-110 transition-transform duration-300`}
-                    >
-                      <IconComponent className="w-full h-full text-white" />
-                    </div>
-
-                    {/* Badge Name */}
-                    <h4 className="text-lg font-semibold mb-3 group-hover:text-white transition-colors">
-                      {cert.badge}
-                    </h4>
-
-                    {/* Description */}
-                    <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
-                      {cert.description}
-                    </p>
-
-                    {/* Verified Badge */}
-                    <div className="mt-4 inline-flex items-center gap-2 text-green-400 text-sm font-medium">
-                      <CheckCircle size={16} />
-                      <span>Verified</span>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+                {/* Certified Badge */}
+                {partner.certified && (
+                  <motion.div
+                    className="absolute -top-2 -right-2 w-6 h-6 bg-gold rounded-full flex items-center justify-center"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.5 + index * 0.1 }}
+                  >
+                    <CheckCircle className="text-black" size={14} />
+                  </motion.div>
+                )}
+              </motion.div>
+            </motion.div>
+          ))}
         </motion.div>
 
-        {/* Partner Logos Section */}
+        {/* Certifications */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <h3 className="text-2xl font-bold text-center mb-8">
-            Technology Partners
-          </h3>
-
-          <motion.div
-            className="grid grid-cols-4 md:grid-cols-8 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {partners.map((partner, index) => (
+          {certifications.map((cert, index) => {
+            const IconComponent = cert.icon;
+            return (
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="group relative"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group"
               >
-                <motion.div
-                  className="bg-slate-700/30 backdrop-blur-sm border border-slate-600 rounded-xl p-6 flex flex-col items-center justify-center h-24 transition-all duration-300 hover:border-slate-500 hover:bg-slate-700/50"
-                  variants={logoVariants}
-                  initial="rest"
-                  whileHover="hover"
-                >
-                  {/* Logo */}
-                  <div className="text-2xl mb-2">{partner.logo}</div>
-                  <div className="text-xs text-gray-400 text-center font-medium">
-                    {partner.name}
+                <div className="bg-slate-700/50 backdrop-blur-sm border border-slate-600 rounded-2xl p-6 text-center h-full transition-all duration-300 hover:border-slate-500 hover:bg-slate-700/70 hover:transform hover:scale-105">
+                  {/* Icon */}
+                  <div
+                    className={`w-16 h-16 rounded-xl bg-gradient-to-br ${cert.color} p-4 mb-4 mx-auto group-hover:scale-110 transition-transform duration-300`}
+                  >
+                    <IconComponent className="w-full h-full text-white" />
                   </div>
 
-                  {/* Certified Badge */}
-                  {partner.certified && (
-                    <motion.div
-                      className="absolute -top-2 -right-2 w-6 h-6 bg-gold rounded-full flex items-center justify-center"
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ delay: 0.5 + index * 0.1 }}
-                    >
-                      <CheckCircle className="text-black" size={14} />
-                    </motion.div>
-                  )}
-                </motion.div>
+                  {/* Badge Name */}
+                  <h4 className="text-lg font-semibold mb-3 group-hover:text-white transition-colors">
+                    {cert.badge}
+                  </h4>
+
+                  {/* Description */}
+                  <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
+                    {cert.description}
+                  </p>
+
+                  {/* Verified Badge */}
+                  <div className="mt-4 inline-flex items-center gap-2 text-green-400 text-sm font-medium">
+                    <CheckCircle size={16} />
+                    <span>Verified</span>
+                  </div>
+                </div>
               </motion.div>
-            ))}
-          </motion.div>
+            );
+          })}
         </motion.div>
 
         {/* AWS Special Highlight */}

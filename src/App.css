@@ -278,25 +278,64 @@ html {
 }
 
 @media (min-width: 640px) {
-  .text-responsive-sm { font-size: 1rem; line-height: 1.5rem; }
-  .text-responsive-base { font-size: 1.125rem; line-height: 1.75rem; }
-  .text-responsive-lg { font-size: 1.25rem; line-height: 1.75rem; }
-  .text-responsive-xl { font-size: 1.5rem; line-height: 2rem; }
-  .text-responsive-2xl { font-size: 1.875rem; line-height: 2.25rem; }
-  .text-responsive-3xl { font-size: 2.25rem; line-height: 2.5rem; }
+  .text-responsive-sm {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .text-responsive-base {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  .text-responsive-lg {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  .text-responsive-xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .text-responsive-2xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  .text-responsive-3xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
 }
 
 @media (min-width: 768px) {
-  .text-responsive-sm { font-size: 1.125rem; line-height: 1.75rem; }
-  .text-responsive-base { font-size: 1.25rem; line-height: 1.75rem; }
-  .text-responsive-lg { font-size: 1.5rem; line-height: 2rem; }
-  .text-responsive-xl { font-size: 1.875rem; line-height: 2.25rem; }
-  .text-responsive-2xl { font-size: 2.25rem; line-height: 2.5rem; }
-  .text-responsive-3xl { font-size: 3rem; line-height: 1; }
+  .text-responsive-sm {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  .text-responsive-base {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  .text-responsive-lg {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .text-responsive-xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  .text-responsive-2xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  .text-responsive-3xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
 }
 
 @media (min-width: 1024px) {
-  .text-responsive-3xl { font-size: 3.75rem; line-height: 1; }
+  .text-responsive-3xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
 }
 
 /* Responsive spacing utilities */
@@ -444,7 +483,7 @@ html {
   .mobile-only {
     display: none;
   }
-  
+
   .tablet-up {
     display: block;
   }
@@ -601,11 +640,11 @@ html {
   .responsive-container {
     padding: 0 0.75rem;
   }
-  
+
   .card-responsive {
     padding: 1rem;
   }
-  
+
   .btn-responsive {
     padding: 0.625rem 1.25rem;
     font-size: 0.9375rem;
@@ -618,51 +657,51 @@ html {
   .mobile-space-y-4 > * + * {
     margin-top: 1rem;
   }
-  
+
   .mobile-space-y-6 > * + * {
     margin-top: 1.5rem;
   }
-  
+
   /* Mobile-specific text sizes */
   .mobile-text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
-  
+
   .mobile-text-base {
     font-size: 1rem;
     line-height: 1.5rem;
   }
-  
+
   .mobile-text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
-  
+
   /* Mobile-specific padding */
   .mobile-p-4 {
     padding: 1rem;
   }
-  
+
   .mobile-px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
+
   .mobile-py-6 {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
   }
-  
+
   /* Mobile-specific margins */
   .mobile-mb-4 {
     margin-bottom: 1rem;
   }
-  
+
   .mobile-mb-6 {
     margin-bottom: 1.5rem;
   }
-  
+
   .mobile-mb-8 {
     margin-bottom: 2rem;
   }
@@ -673,12 +712,12 @@ html {
   .tablet-grid-cols-2 {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .tablet-text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
-  
+
   .tablet-text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
@@ -690,7 +729,7 @@ html {
   .desktop-grid-cols-3 {
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   .desktop-grid-cols-4 {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -702,7 +741,7 @@ html {
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
-  
+
   .landscape-mobile-text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -723,7 +762,7 @@ html {
   .no-print {
     display: none !important;
   }
-  
+
   .print-friendly {
     background: white !important;
     color: black !important;

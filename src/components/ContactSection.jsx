@@ -77,7 +77,8 @@ const ContactSection = () => {
     setTimeout(() => setSubmitStatus(null), 5000);
   };
 
-  return (    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-slate-900 to-slate-800 text-white relative overflow-hidden">
+  return (
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-slate-900 to-slate-800 text-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gold/5 rounded-full blur-3xl" />
@@ -113,12 +114,15 @@ const ContactSection = () => {
             transition={{ duration: 0.8 }}
             className="order-2 xl:order-1"
           >
-            <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8">What You Get:</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8">
+              What You Get:
+            </h3>
 
             <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
               {benefits.map((benefit, index) => {
                 const IconComponent = benefit.icon;
-                return (                  <motion.div
+                return (
+                  <motion.div
                     key={index}
                     className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl hover:border-slate-600 transition-all duration-300 group"
                     initial={{ opacity: 0, y: 20 }}

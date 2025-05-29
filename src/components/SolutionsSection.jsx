@@ -88,7 +88,7 @@ const SolutionsSection = () => {
         </motion.div>
 
         {/* Solution Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {solutions.map((solution, index) => {
             const IconComponent = solution.icon;
             return (
@@ -164,13 +164,13 @@ const SolutionsSection = () => {
 
         {/* Stats Counter with Animation */}
         <motion.div
-          className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-2xl p-8"
+          className="bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-2xl p-4 sm:p-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 text-center">
             <motion.div
               variants={statsVariants}
               initial="hidden"
@@ -227,13 +227,13 @@ const SolutionsSection = () => {
 
         {/* Bottom CTA */}
         <motion.div
-          className="text-center mt-12"
+          className="text-center mt-8 sm:mt-12 px-4 sm:px-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <p className="text-lg text-gray-300">
+          <p className="text-base sm:text-lg text-gray-300">
             Ready to see these solutions in action? Check out our interactive
             POCs below.
           </p>

@@ -99,154 +99,154 @@ const TestimonialsSection = () => {
       </div>
 
       <div className="responsive-container relative z-10">
-        {/* Header */}
         <motion.div
-          className="text-center mb-12 sm:mb-16 px-4 sm:px-0"
+          className="text-center mb-8 sm:mb-12 px-4 sm:px-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          {" "}
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
-            Client <span className="gradient-text-gold">Success Stories</span>
+            What Our{" "}
+            <span className="gradient-text-cyan-purple">Clients Say</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Don't just take our word for it. Hear from the leaders who've
-            transformed their businesses with our AI-powered solutions.
+            Real results, real stories. See how we’ve helped teams like yours.
           </p>
         </motion.div>
 
-        {/* Main Testimonial Card */}
-        <motion.div
-          className="max-w-6xl mx-auto"
-          key={currentTestimonial}
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              {/* Video/Image Section */}
-              <div className="relative bg-slate-800 flex items-center justify-center min-h-[400px]">
-                {/* Video Placeholder */}
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <div className="w-32 h-32 bg-slate-700 rounded-full flex items-center justify-center">
-                    <div className="w-20 h-20 bg-slate-600 rounded-full flex items-center justify-center">
-                      <Play className="text-gold ml-1" size={32} />
+        {/* Testimonial Carousel */}
+        <div className="flex flex-col items-center gap-6 sm:gap-8">
+          <motion.div
+            className="w-full max-w-2xl bg-slate-800/40 backdrop-blur-sm border border-slate-700 rounded-2xl p-4 sm:p-8 relative"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            {/* Main Testimonial Card */}
+            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-2">
+                {/* Video/Image Section */}
+                <div className="relative bg-slate-800 flex items-center justify-center min-h-[400px]">
+                  {/* Video Placeholder */}
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <div className="w-32 h-32 bg-slate-700 rounded-full flex items-center justify-center">
+                      <div className="w-20 h-20 bg-slate-600 rounded-full flex items-center justify-center">
+                        <Play className="text-gold ml-1" size={32} />
+                      </div>
+                    </div>
+
+                    {/* Play overlay */}
+                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity cursor-pointer">
+                      <div className="bg-gold/20 backdrop-blur-sm rounded-full p-4">
+                        <Play className="text-gold" size={48} />
+                      </div>
                     </div>
                   </div>
 
-                  {/* Play overlay */}
-                  <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity cursor-pointer">
-                    <div className="bg-gold/20 backdrop-blur-sm rounded-full p-4">
-                      <Play className="text-gold" size={48} />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Client Logo */}
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg p-2">
-                  <div className="w-24 h-8 bg-gray-300 rounded flex items-center justify-center text-xs text-gray-600">
-                    {currentData.company}
-                  </div>
-                </div>
-              </div>
-
-              {/* Content Section */}
-              <div className="p-8 lg:p-12 flex flex-col justify-center">
-                {/* Quote Icon */}
-                <Quote className="text-gold mb-6" size={48} />
-
-                {/* Quote */}
-                <blockquote className="text-xl lg:text-2xl font-medium mb-8 leading-relaxed">
-                  "{currentData.quote}"
-                </blockquote>
-
-                {/* Results Badge */}
-                <div className="mb-6">
-                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-full px-4 py-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                    <span className="text-green-400 font-semibold text-sm">
-                      {currentData.results}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Client Info */}
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-gold to-yellow-500 rounded-full flex items-center justify-center">
-                    <div className="w-14 h-14 bg-slate-700 rounded-full flex items-center justify-center text-lg font-bold">
-                      {currentData.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold">
-                      {currentData.name}
-                    </h4>
-                    <p className="text-gray-400">{currentData.position}</p>
-                    <p className="text-gray-500 text-sm">
+                  {/* Client Logo */}
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg p-2">
+                    <div className="w-24 h-8 bg-gray-300 rounded flex items-center justify-center text-xs text-gray-600">
                       {currentData.company}
-                    </p>
+                    </div>
                   </div>
                 </div>
 
-                {/* Rating */}
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(currentData.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="text-gold fill-current"
-                      size={20}
-                    />
-                  ))}
+                {/* Content Section */}
+                <div className="p-8 lg:p-12 flex flex-col justify-center">
+                  {/* Quote Icon */}
+                  <Quote className="text-gold mb-6" size={48} />
+
+                  {/* Quote */}
+                  <blockquote className="text-xl lg:text-2xl font-medium mb-8 leading-relaxed">
+                    "{currentData.quote}"
+                  </blockquote>
+
+                  {/* Results Badge */}
+                  <div className="mb-6">
+                    <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-full px-4 py-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                      <span className="text-green-400 font-semibold text-sm">
+                        {currentData.results}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Client Info */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-gold to-yellow-500 rounded-full flex items-center justify-center">
+                      <div className="w-14 h-14 bg-slate-700 rounded-full flex items-center justify-center text-lg font-bold">
+                        {currentData.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")}
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold">
+                        {currentData.name}
+                      </h4>
+                      <p className="text-gray-400">{currentData.position}</p>
+                      <p className="text-gray-500 text-sm">
+                        {currentData.company}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Rating */}
+                  <div className="flex items-center gap-1 mb-4">
+                    {[...Array(currentData.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="text-gold fill-current"
+                        size={20}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
+          </motion.div>
+          {/* Carousel Controls */}
+          <div className="flex items-center gap-2 sm:gap-4 mt-2">
+            <button
+              onClick={prevTestimonial}
+              className="p-3 bg-slate-800 border border-slate-600 rounded-full hover:border-slate-500 hover:bg-slate-700 transition-all"
+            >
+              <ChevronLeft size={24} />
+            </button>
+
+            {/* Indicators */}
+            <div className="flex items-center gap-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentTestimonial(index)}
+                  className={`w-3 h-3 rounded-full transition-all ${
+                    index === currentTestimonial
+                      ? "bg-gold scale-125"
+                      : "bg-slate-600 hover:bg-slate-500"
+                  }`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={nextTestimonial}
+              className="p-3 bg-slate-800 border border-slate-600 rounded-full hover:border-slate-500 hover:bg-slate-700 transition-all"
+            >
+              <ChevronRight size={24} />
+            </button>
+
+            {/* Play/Pause */}
+            <button
+              onClick={() => setIsPlaying(!isPlaying)}
+              className="p-3 bg-slate-800 border border-slate-600 rounded-full hover:border-slate-500 hover:bg-slate-700 transition-all ml-4"
+            >
+              {isPlaying ? <Pause size={24} /> : <Play size={24} />}
+            </button>
           </div>
-        </motion.div>
-
-        {/* Navigation Controls */}
-        <div className="flex items-center justify-center gap-4 mt-8">
-          <button
-            onClick={prevTestimonial}
-            className="p-3 bg-slate-800 border border-slate-600 rounded-full hover:border-slate-500 hover:bg-slate-700 transition-all"
-          >
-            <ChevronLeft size={24} />
-          </button>
-
-          {/* Indicators */}
-          <div className="flex items-center gap-2">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentTestimonial(index)}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  index === currentTestimonial
-                    ? "bg-gold scale-125"
-                    : "bg-slate-600 hover:bg-slate-500"
-                }`}
-              />
-            ))}
-          </div>
-
-          <button
-            onClick={nextTestimonial}
-            className="p-3 bg-slate-800 border border-slate-600 rounded-full hover:border-slate-500 hover:bg-slate-700 transition-all"
-          >
-            <ChevronRight size={24} />
-          </button>
-
-          {/* Play/Pause */}
-          <button
-            onClick={() => setIsPlaying(!isPlaying)}
-            className="p-3 bg-slate-800 border border-slate-600 rounded-full hover:border-slate-500 hover:bg-slate-700 transition-all ml-4"
-          >
-            {isPlaying ? <Pause size={24} /> : <Play size={24} />}
-          </button>
         </div>
 
         {/* Stats Summary */}

@@ -114,7 +114,8 @@ const ServicesSection = () => {
     },
   };
 
-  return (    <section className="py-12 sm:py-16 md:py-20 bg-slate-800 text-white relative">
+  return (
+    <section className="py-12 sm:py-16 md:py-20 bg-slate-800 text-white relative">
       {/* Scarcity Badge */}
       <motion.div
         className="absolute top-4 sm:top-6 md:top-8 right-4 sm:right-6 md:right-8 bg-gradient-to-r from-red-500 to-orange-500 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-lg z-10"
@@ -162,7 +163,9 @@ const ServicesSection = () => {
                 variants={itemVariants}
                 className="group cursor-pointer"
                 onClick={() => setSelectedPOC(service)}
-              >                <div className="bg-slate-700/50 backdrop-blur-sm border border-slate-600 rounded-2xl p-4 sm:p-6 h-full transition-all duration-300 hover:border-slate-500 hover:bg-slate-700/70 hover:transform hover:scale-105 hover:shadow-xl">
+              >
+                {" "}
+                <div className="bg-slate-700/50 backdrop-blur-sm border border-slate-600 rounded-2xl p-4 sm:p-6 h-full transition-all duration-300 hover:border-slate-500 hover:bg-slate-700/70 hover:transform hover:scale-105 hover:shadow-xl">
                   {/* Icon */}
                   <div
                     className={`w-12 sm:w-16 h-12 sm:h-16 rounded-xl bg-gradient-to-br ${service.color} p-3 sm:p-4 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}

@@ -28,7 +28,9 @@ const FloatingCTA = () => {
   };
 
   return (
-    <AnimatePresence>      {isVisible && (
+    <AnimatePresence>
+      {" "}
+      {isVisible && (
         <motion.div
           className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50"
           initial={{ opacity: 0, scale: 0, y: 100 }}
@@ -60,7 +62,9 @@ const FloatingCTA = () => {
                       <Zap className="text-black" size={16} />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <h4 className="font-semibold text-sm sm:text-base">Need Help?</h4>
+                      <h4 className="font-semibold text-sm sm:text-base">
+                        Need Help?
+                      </h4>
                       <p className="text-xs sm:text-sm text-gray-400">
                         We're here to help!
                       </p>
@@ -72,7 +76,9 @@ const FloatingCTA = () => {
                     development process.
                   </p>
 
-                  <div className="space-y-2">                    <motion.button
+                  <div className="space-y-2">
+                    {" "}
+                    <motion.button
                       onClick={scrollToContact}
                       className="w-full bg-gradient-to-r from-gold to-yellow-500 text-black font-semibold py-2 px-3 sm:px-4 rounded-lg text-xs sm:text-sm hover:shadow-lg transition-all duration-300 touch-target"
                       whileHover={{ scale: 1.02 }}
@@ -81,7 +87,6 @@ const FloatingCTA = () => {
                       <Send className="inline mr-2" size={14} />
                       Start Free Consultation
                     </motion.button>
-
                     <motion.a
                       href="mailto:aipowereddevteam@gmail.com"
                       className="w-full bg-slate-700 text-white font-medium py-2 px-3 sm:px-4 rounded-lg text-xs sm:text-sm hover:bg-slate-600 transition-colors flex items-center justify-center touch-target"
