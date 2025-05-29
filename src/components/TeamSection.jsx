@@ -274,41 +274,41 @@ const TeamSection = () => {
 
         {/* Isometric Design Visualization */}
         <motion.div
-          className="mt-16 text-center"
+          className="mt-12 sm:mt-16 text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 1 }}
         >
-          <div className="inline-flex items-center gap-8 p-8 bg-slate-800/20 backdrop-blur-sm border border-slate-700 rounded-2xl">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 p-4 sm:p-8 bg-slate-800/20 backdrop-blur-sm border border-slate-700 rounded-2xl w-full max-w-2xl mx-auto">
             {/* Human Icon */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-3 mx-auto">
-                <Users className="text-white" size={32} />
+            <div className="text-center flex-1 min-w-[90px]">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-2 sm:mb-3 mx-auto">
+                <Users className="text-white" size={24} />
               </div>
-              <p className="text-sm font-semibold">Human Creativity</p>
+              <p className="text-xs sm:text-sm font-semibold">Human Creativity</p>
             </div>
 
             {/* Plus Symbol */}
-            <div className="text-4xl font-bold text-gold">+</div>
+            <div className="text-2xl sm:text-4xl font-bold text-gold">+</div>
 
             {/* AI Icon */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-3 mx-auto">
-                <Brain className="text-white" size={32} />
+            <div className="text-center flex-1 min-w-[90px]">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-2 sm:mb-3 mx-auto">
+                <Brain className="text-white" size={24} />
               </div>
-              <p className="text-sm font-semibold">AI Efficiency</p>
+              <p className="text-xs sm:text-sm font-semibold">AI Efficiency</p>
             </div>
 
             {/* Equals Symbol */}
-            <div className="text-4xl font-bold text-gold">=</div>
+            <div className="text-2xl sm:text-4xl font-bold text-gold">=</div>
 
             {/* Result Icon */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-3 mx-auto">
-                <Zap className="text-white" size={32} />
+            <div className="text-center flex-1 min-w-[90px]">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-2 sm:mb-3 mx-auto">
+                <Zap className="text-white" size={24} />
               </div>
-              <p className="text-sm font-semibold">Extraordinary Results</p>
+              <p className="text-xs sm:text-sm font-semibold">Extraordinary Results</p>
             </div>
           </div>
         </motion.div>

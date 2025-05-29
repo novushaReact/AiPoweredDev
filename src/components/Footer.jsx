@@ -197,13 +197,13 @@ const Footer = () => {
             Get the latest AI development insights and project showcases
           </p>
 
-          <div className="max-w-md mx-auto flex gap-3">
+          <div className="max-w-md mx-auto flex flex-col sm:flex-row gap-3 w-full px-2 sm:px-0">
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:border-gold focus:ring-1 focus:ring-gold focus:outline-none transition-colors text-white placeholder-gray-400"
+              className="flex-1 px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:border-gold focus:ring-1 focus:ring-gold focus:outline-none transition-colors text-white placeholder-gray-400 text-sm sm:text-base"
             />
-            <button className="bg-gradient-to-r from-gold to-yellow-500 text-black font-semibold px-6 py-3 rounded-lg hover:shadow-lg hover:shadow-gold/50 transition-all duration-300">
+            <button className="bg-gradient-to-r from-gold to-yellow-500 text-black font-semibold px-6 py-3 rounded-lg hover:shadow-lg hover:shadow-gold/50 transition-all duration-300 text-sm sm:text-base w-full sm:w-auto">
               Subscribe
             </button>
           </div>

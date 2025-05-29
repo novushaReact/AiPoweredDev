@@ -42,11 +42,12 @@ const FloatingCTA = () => {
           <AnimatePresence>
             {isExpanded && (
               <motion.div
-                className="absolute bottom-16 right-0 w-72 sm:w-80 bg-slate-800 border border-slate-600 rounded-2xl p-4 sm:p-6 shadow-2xl max-w-[calc(100vw-2rem)]"
+                className="absolute bottom-16 right-0 w-full max-w-xs sm:w-80 bg-slate-800 border border-slate-600 rounded-2xl p-3 sm:p-6 shadow-2xl max-w-[calc(100vw-1rem)] sm:max-w-[calc(100vw-2rem)]"
                 initial={{ opacity: 0, scale: 0.8, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.8, y: 20 }}
                 transition={{ duration: 0.2 }}
+                style={{ minWidth: 0 }}
               >
                 {/* Close Button */}
                 <button
@@ -57,12 +58,12 @@ const FloatingCTA = () => {
                 </button>
 
                 <div className="text-white">
-                  <div className="flex items-center gap-3 mb-3 sm:mb-4">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-4">
                     <div className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-gold to-yellow-500 rounded-full flex items-center justify-center flex-shrink-0">
                       <Zap className="text-black" size={16} />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <h4 className="font-semibold text-sm sm:text-base">
+                      <h4 className="font-semibold text-xs sm:text-base">
                         Need Help?
                       </h4>
                       <p className="text-xs sm:text-sm text-gray-400">
@@ -71,13 +72,12 @@ const FloatingCTA = () => {
                     </div>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-gray-300 mb-3 sm:mb-4 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-gray-300 mb-2 sm:mb-4 leading-relaxed">
                     Get a free consultation and see how AI can transform your
                     development process.
                   </p>
 
                   <div className="space-y-2">
-                    {" "}
                     <motion.button
                       onClick={scrollToContact}
                       className="w-full bg-gradient-to-r from-gold to-yellow-500 text-black font-semibold py-2 px-3 sm:px-4 rounded-lg text-xs sm:text-sm hover:shadow-lg transition-all duration-300 touch-target"
