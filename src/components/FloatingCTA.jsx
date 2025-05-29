@@ -28,10 +28,9 @@ const FloatingCTA = () => {
   };
 
   return (
-    <AnimatePresence>
-      {isVisible && (
+    <AnimatePresence>      {isVisible && (
         <motion.div
-          className="fixed bottom-6 right-6 z-50"
+          className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50"
           initial={{ opacity: 0, scale: 0, y: 100 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0, y: 100 }}
@@ -41,7 +40,7 @@ const FloatingCTA = () => {
           <AnimatePresence>
             {isExpanded && (
               <motion.div
-                className="absolute bottom-16 right-0 w-80 bg-slate-800 border border-slate-600 rounded-2xl p-6 shadow-2xl"
+                className="absolute bottom-16 right-0 w-72 sm:w-80 bg-slate-800 border border-slate-600 rounded-2xl p-4 sm:p-6 shadow-2xl max-w-[calc(100vw-2rem)]"
                 initial={{ opacity: 0, scale: 0.8, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -50,43 +49,42 @@ const FloatingCTA = () => {
                 {/* Close Button */}
                 <button
                   onClick={() => setIsExpanded(false)}
-                  className="absolute top-2 right-2 text-gray-400 hover:text-white transition-colors"
+                  className="absolute top-2 right-2 text-gray-400 hover:text-white transition-colors touch-target"
                 >
                   <X size={16} />
                 </button>
 
                 <div className="text-white">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 bg-gradient-to-br from-gold to-yellow-500 rounded-full flex items-center justify-center">
-                      <Zap className="text-black" size={20} />
+                  <div className="flex items-center gap-3 mb-3 sm:mb-4">
+                    <div className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-gold to-yellow-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Zap className="text-black" size={16} />
                     </div>
-                    <div>
-                      <h4 className="font-semibold">Need Help?</h4>
-                      <p className="text-sm text-gray-400">
+                    <div className="min-w-0 flex-1">
+                      <h4 className="font-semibold text-sm sm:text-base">Need Help?</h4>
+                      <p className="text-xs sm:text-sm text-gray-400">
                         We're here to help!
                       </p>
                     </div>
                   </div>
 
-                  <p className="text-sm text-gray-300 mb-4">
+                  <p className="text-xs sm:text-sm text-gray-300 mb-3 sm:mb-4 leading-relaxed">
                     Get a free consultation and see how AI can transform your
                     development process.
                   </p>
 
-                  <div className="space-y-2">
-                    <motion.button
+                  <div className="space-y-2">                    <motion.button
                       onClick={scrollToContact}
-                      className="w-full bg-gradient-to-r from-gold to-yellow-500 text-black font-semibold py-2 px-4 rounded-lg text-sm hover:shadow-lg transition-all duration-300"
+                      className="w-full bg-gradient-to-r from-gold to-yellow-500 text-black font-semibold py-2 px-3 sm:px-4 rounded-lg text-xs sm:text-sm hover:shadow-lg transition-all duration-300 touch-target"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <Send className="inline mr-2" size={16} />
+                      <Send className="inline mr-2" size={14} />
                       Start Free Consultation
                     </motion.button>
 
                     <motion.a
                       href="mailto:aipowereddevteam@gmail.com"
-                      className="w-full bg-slate-700 text-white font-medium py-2 px-4 rounded-lg text-sm hover:bg-slate-600 transition-colors flex items-center justify-center"
+                      className="w-full bg-slate-700 text-white font-medium py-2 px-3 sm:px-4 rounded-lg text-xs sm:text-sm hover:bg-slate-600 transition-colors flex items-center justify-center touch-target"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >

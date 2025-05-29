@@ -90,29 +90,28 @@ const TestimonialsSection = () => {
   };
 
   const currentData = testimonials[currentTestimonial];
-
   return (
-    <section className="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 bg-slate-900 text-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/3 left-0 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/3 right-0 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 left-0 w-48 sm:w-64 md:w-72 h-48 sm:h-64 md:h-72 bg-blue-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 right-0 w-48 sm:w-64 md:w-72 h-48 sm:h-64 md:h-72 bg-purple-500/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="responsive-container relative z-10">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16 px-4 sm:px-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           {" "}
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
             Client <span className="gradient-text-gold">Success Stories</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Don't just take our word for it. Hear from the leaders who've
             transformed their businesses with our AI-powered solutions.
           </p>

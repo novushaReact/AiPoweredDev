@@ -105,13 +105,11 @@ const HeroSection = () => {
             transition={{ duration: 2, delay: 1.5 }}
           />
         </svg>
-      </div>
-
-      <div className="container mx-auto px-6 py-20 relative z-10">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+      </div>      <div className="responsive-container py-12 sm:py-16 md:py-20 lg:py-24 relative z-10">
+        <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-responsive-y">
           {/* Authority Badge */}
           <motion.div
-            className="mb-8 px-4 py-2 bg-gradient-to-r from-gold/20 to-yellow-400/20 border border-gold/30 rounded-full text-sm"
+            className="mb-6 sm:mb-8 px-3 sm:px-4 py-2 bg-gradient-to-r from-gold/20 to-yellow-400/20 border border-gold/30 rounded-full text-xs sm:text-sm"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -120,7 +118,7 @@ const HeroSection = () => {
           </motion.div>
           {/* Main Headline */}{" "}
           <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6 gradient-text-cyan-purple text-shadow-cyan"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 gradient-text-cyan-purple text-shadow-cyan leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -128,7 +126,7 @@ const HeroSection = () => {
             AI-Powered Development
           </motion.h1>
           <motion.h2
-            className="text-2xl md:text-3xl font-medium mb-4"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium mb-3 sm:mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -137,7 +135,7 @@ const HeroSection = () => {
           </motion.h2>
           {/* Sub-headline */}
           <motion.p
-            className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl leading-relaxed"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 sm:mb-10 lg:mb-12 max-w-3xl leading-relaxed px-4 sm:px-0"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -148,28 +146,28 @@ const HeroSection = () => {
           </motion.p>
           {/* AI Capabilities Showcase */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 w-full max-w-2xl"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10 lg:mb-12 w-full max-w-3xl px-4 sm:px-0"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <Brain className="text-cyan-400" size={24} />
-              <span className="text-sm">AI Code Optimization</span>
+            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+              <Brain className="text-cyan-400 flex-shrink-0" size={20} />
+              <span className="text-sm sm:text-base">AI Code Optimization</span>
             </div>
-            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <Zap className="text-purple-400" size={24} />
-              <span className="text-sm">Auto-Scaled AWS</span>
+            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+              <Zap className="text-purple-400 flex-shrink-0" size={20} />
+              <span className="text-sm sm:text-base">Auto-Scaled AWS</span>
             </div>
-            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <Cpu className="text-green-400" size={24} />
-              <span className="text-sm">Zero-Downtime DevOps</span>
+            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 sm:col-span-2 lg:col-span-1">
+              <Cpu className="text-green-400 flex-shrink-0" size={20} />
+              <span className="text-sm sm:text-base">Zero-Downtime DevOps</span>
             </div>
           </motion.div>
           {/* CTA Button */}{" "}
           <motion.button
             onClick={scrollToNext}
-            className="group bg-gradient-to-r from-gold to-yellow-500 text-black font-semibold px-8 py-4 rounded-full text-lg btn-glow-gold hover:scale-105"
+            className="group bg-gradient-to-r from-gold to-yellow-500 text-black font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg btn-glow-gold hover:scale-105 touch-target"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
@@ -179,27 +177,27 @@ const HeroSection = () => {
             Meet Your AI Team
             <ArrowDown
               className="inline-block ml-2 group-hover:translate-y-1 transition-transform"
-              size={20}
+              size={18}
             />
           </motion.button>
           {/* Stats Counter */}
           <motion.div
-            className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-8 text-center"
+            className="mt-12 sm:mt-16 grid grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 text-center w-full max-w-2xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
             <div>
-              <div className="text-3xl font-bold text-cyan-400">68%</div>
-              <div className="text-gray-300 text-sm">Faster Delivery</div>
+              <div className="text-2xl sm:text-3xl font-bold text-cyan-400">68%</div>
+              <div className="text-gray-300 text-xs sm:text-sm">Faster Delivery</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-purple-400">99.8%</div>
-              <div className="text-gray-300 text-sm">Client Satisfaction</div>
+              <div className="text-2xl sm:text-3xl font-bold text-purple-400">99.8%</div>
+              <div className="text-gray-300 text-xs sm:text-sm">Client Satisfaction</div>
             </div>
-            <div className="md:col-span-1 col-span-2">
-              <div className="text-3xl font-bold text-green-400">500+</div>
-              <div className="text-gray-300 text-sm">Projects Delivered</div>
+            <div className="col-span-2 lg:col-span-1">
+              <div className="text-2xl sm:text-3xl font-bold text-green-400">500+</div>
+              <div className="text-gray-300 text-xs sm:text-sm">Projects Delivered</div>
             </div>
           </motion.div>
         </div>

@@ -70,11 +70,10 @@ const PainPointsSection = () => {
       },
     },
   };
-
   return (
     <section
       id="pain-points"
-      className="py-20 bg-slate-900 text-white relative"
+      className="py-12 sm:py-16 md:py-20 bg-slate-900 text-white relative"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -85,29 +84,27 @@ const PainPointsSection = () => {
             backgroundSize: "40px 40px",
           }}
         />
-      </div>
-
-      <div className="container mx-auto px-6 relative z-10">
+      </div>      <div className="responsive-container relative z-10">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16 px-4 sm:px-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           {" "}
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-red-400">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-red-400 leading-tight">
             Stuck in Development{" "}
             <span className="gradient-text-red-orange">Quicksand?</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             We've seen these pain points destroy promising projects. Sound
             familiar?
           </p>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

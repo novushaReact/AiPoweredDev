@@ -82,36 +82,35 @@ const TeamSection = () => {
     },
   };
 
-  return (
-    <section className="py-20 bg-gradient-to-b from-slate-800 to-slate-900 text-white relative overflow-hidden">
+  return (    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-slate-800 to-slate-900 text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-cyan-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-purple-500/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="responsive-container relative z-10">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16 px-4 sm:px-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           {" "}
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
             <span className="gradient-text-cyan-purple">Brains + Bots</span>:
             Meet the Dream Team
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-6 sm:mb-8 leading-relaxed">
             We combine human creativity with AI efficiency to deliver
             extraordinary results.
           </p>
           {/* Core Message */}
-          <div className="inline-flex items-center gap-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-full px-6 py-3">
-            <Brain className="text-cyan-400" size={24} />
-            <span className="text-lg font-medium">
+          <div className="inline-flex items-center gap-3 sm:gap-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-full px-4 sm:px-6 py-2 sm:py-3 max-w-full">
+            <Brain className="text-cyan-400 flex-shrink-0" size={20} />
+            <span className="text-sm sm:text-base lg:text-lg font-medium text-center">
               Human creativity × AI efficiency = Unstoppable results
             </span>
           </div>

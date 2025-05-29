@@ -211,113 +211,437 @@ html {
   }
 }
 
-/* Custom button styles */
-.btn-primary {
-  background: linear-gradient(45deg, #ffd700, #ffa500);
-  color: #000;
-  font-weight: 600;
-  padding: 12px 24px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
+/* Enhanced Responsive Design System */
+
+/* Base responsive container */
+.responsive-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: #ffd700;
-  border: 2px solid #ffd700;
-  font-weight: 600;
-  padding: 12px 24px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background: #ffd700;
-  color: #000;
-}
-
-/* Additional visibility enhancements */
-.text-shadow-glow {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
-    0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.1);
-}
-
-.text-shadow-gold {
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.4),
-    0 0 30px rgba(255, 215, 0, 0.2);
-}
-
-.text-shadow-cyan {
-  text-shadow: 0 0 10px rgba(6, 182, 212, 0.6), 0 0 20px rgba(6, 182, 212, 0.4),
-    0 0 30px rgba(6, 182, 212, 0.2);
-}
-
-/* Enhanced button animations */
-.btn-glow-gold {
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-  transition: all 0.3s ease;
-}
-
-.btn-glow-gold:hover {
-  box-shadow: 0 0 30px rgba(255, 215, 0, 0.6), 0 0 60px rgba(255, 215, 0, 0.3);
-  transform: translateY(-2px);
-}
-
-/* Enhanced form focus states */
-.form-input-enhanced {
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-}
-
-.form-input-enhanced:focus {
-  border-color: #ffd700;
-  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1), 0 0 20px rgba(255, 215, 0, 0.3);
-  transform: scale(1.02);
-}
-
-/* Performance optimizations for animations */
-.motion-safe {
-  will-change: transform;
-}
-
-.motion-safe:hover {
-  will-change: transform, opacity;
-}
-
-.motion-safe.animation-complete {
-  will-change: auto;
-}
-
-/* Optimized transform properties */
-.transform-gpu {
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-/* Reduce paint flashing for gradient animations */
-/* Smooth scroll behavior */
-html {
-  scroll-behavior: smooth;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .gradient-text-gold,
-  .gradient-text-cyan-purple,
-  .gradient-text-red-orange {
-    animation: none;
-  }
-
-  .floating-optimized {
-    will-change: auto;
-    transform: none;
+/* Mobile-first responsive breakpoints */
+@media (min-width: 640px) {
+  .responsive-container {
+    padding: 0 1.5rem;
   }
 }
+
+@media (min-width: 768px) {
+  .responsive-container {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-container {
+    padding: 0 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .responsive-container {
+    padding: 0 3rem;
+  }
+}
+
+/* Responsive text scaling */
+.text-responsive-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-responsive-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-responsive-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-responsive-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-responsive-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-responsive-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+@media (min-width: 640px) {
+  .text-responsive-sm { font-size: 1rem; line-height: 1.5rem; }
+  .text-responsive-base { font-size: 1.125rem; line-height: 1.75rem; }
+  .text-responsive-lg { font-size: 1.25rem; line-height: 1.75rem; }
+  .text-responsive-xl { font-size: 1.5rem; line-height: 2rem; }
+  .text-responsive-2xl { font-size: 1.875rem; line-height: 2.25rem; }
+  .text-responsive-3xl { font-size: 2.25rem; line-height: 2.5rem; }
+}
+
+@media (min-width: 768px) {
+  .text-responsive-sm { font-size: 1.125rem; line-height: 1.75rem; }
+  .text-responsive-base { font-size: 1.25rem; line-height: 1.75rem; }
+  .text-responsive-lg { font-size: 1.5rem; line-height: 2rem; }
+  .text-responsive-xl { font-size: 1.875rem; line-height: 2.25rem; }
+  .text-responsive-2xl { font-size: 2.25rem; line-height: 2.5rem; }
+  .text-responsive-3xl { font-size: 3rem; line-height: 1; }
+}
+
+@media (min-width: 1024px) {
+  .text-responsive-3xl { font-size: 3.75rem; line-height: 1; }
+}
+
+/* Responsive spacing utilities */
+.space-responsive-y > * + * {
+  margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .space-responsive-y > * + * {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .space-responsive-y > * + * {
+    margin-top: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .space-responsive-y > * + * {
+    margin-top: 2.5rem;
+  }
+}
+
+/* Responsive grid utilities */
+.grid-responsive {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .grid-responsive {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-responsive {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-responsive {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+.grid-responsive-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .grid-responsive-2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+.grid-responsive-4 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .grid-responsive-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-responsive-4 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Responsive padding utilities */
+.padding-responsive {
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .padding-responsive {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .padding-responsive {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .padding-responsive {
+    padding: 3rem;
+  }
+}
+
+/* Responsive button sizing */
+.btn-responsive {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .btn-responsive {
+    padding: 0.875rem 1.75rem;
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .btn-responsive {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+}
+
+/* Hide/show utilities for different screen sizes */
+.mobile-only {
+  display: block;
+}
+
+.tablet-up {
+  display: none;
+}
+
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .mobile-only {
+    display: none;
+  }
+  
+  .tablet-up {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktop-only {
+    display: block;
+  }
+}
+
+/* Responsive overflow and scrolling */
+.overflow-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 768px) {
+  .overflow-responsive {
+    overflow-x: visible;
+  }
+}
+
+/* Enhanced responsive font sizes for hero sections */
+.hero-text-responsive {
+  font-size: 2.5rem;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+@media (min-width: 640px) {
+  .hero-text-responsive {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-text-responsive {
+    font-size: 4.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-text-responsive {
+    font-size: 5.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-text-responsive {
+    font-size: 6rem;
+  }
+}
+
+/* Responsive card layouts */
+.card-responsive {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .card-responsive {
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-responsive {
+    padding: 2.5rem;
+  }
+}
+
+/* Responsive form elements */
+.form-responsive input,
+.form-responsive textarea,
+.form-responsive select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .form-responsive input,
+  .form-responsive textarea,
+  .form-responsive select {
+    padding: 0.875rem 1.125rem;
+    font-size: 1.125rem;
+    border-radius: 0.625rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .form-responsive input,
+  .form-responsive textarea,
+  .form-responsive select {
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+  }
+}
+
+/* Responsive navigation */
+.nav-responsive {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .nav-responsive {
+    flex-direction: row;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+  }
+}
+
+/* Enhanced mobile touch targets */
+@media (max-width: 767px) {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Responsive image containers */
+.image-responsive {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.image-container-responsive {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .image-container-responsive {
+    border-radius: 1rem;
+  }
+}
+
+/* Fix for very small screens */
+@media (max-width: 320px) {
+  .responsive-container {
+    padding: 0 0.75rem;
+  }
+  
+  .card-responsive {
+    padding: 1rem;
+  }
+  
+  .btn-responsive {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9375rem;
+  }
+}
+
+/* Additional mobile-specific improvements */
+@media (max-width: 767px) {
+  /* Better spacing for mobile */
+  .mobile-space-y-4 > * + * {
+    margin-top: 1rem;
+  }
+  
+  .mobile-space-y-6 > * + * {
+    margin-top: 1.5rem;
+  }
+  
+  /* Mobile-specific text sizes */
+  .mobile-text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  
+  .mobile-text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  
+  .mobile-text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  
+  /* Mobile-specific padding */
+  .mobile-p-4 {
+    padding: 1rem;
+  }
+  
+  .mobile-px-4 {

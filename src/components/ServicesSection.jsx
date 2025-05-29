@@ -114,11 +114,10 @@ const ServicesSection = () => {
     },
   };
 
-  return (
-    <section className="py-20 bg-slate-800 text-white relative">
+  return (    <section className="py-12 sm:py-16 md:py-20 bg-slate-800 text-white relative">
       {/* Scarcity Badge */}
       <motion.div
-        className="absolute top-8 right-8 bg-gradient-to-r from-red-500 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg"
+        className="absolute top-4 sm:top-6 md:top-8 right-4 sm:right-6 md:right-8 bg-gradient-to-r from-red-500 to-orange-500 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-lg z-10"
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -127,21 +126,21 @@ const ServicesSection = () => {
         🔥 Limited Free POCs This Month
       </motion.div>
 
-      <div className="container mx-auto px-6">
+      <div className="responsive-container">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16 px-4 sm:px-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           {" "}
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
             Build the <span className="gradient-text-gold">Impossible</span>.
             Prove It First.
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Don't just take our word for it. Experience our expertise through
             interactive proof-of-concepts.
           </p>
@@ -149,7 +148,7 @@ const ServicesSection = () => {
 
         {/* Services Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -163,22 +162,21 @@ const ServicesSection = () => {
                 variants={itemVariants}
                 className="group cursor-pointer"
                 onClick={() => setSelectedPOC(service)}
-              >
-                <div className="bg-slate-700/50 backdrop-blur-sm border border-slate-600 rounded-2xl p-6 h-full transition-all duration-300 hover:border-slate-500 hover:bg-slate-700/70 hover:transform hover:scale-105 hover:shadow-xl">
+              >                <div className="bg-slate-700/50 backdrop-blur-sm border border-slate-600 rounded-2xl p-4 sm:p-6 h-full transition-all duration-300 hover:border-slate-500 hover:bg-slate-700/70 hover:transform hover:scale-105 hover:shadow-xl">
                   {/* Icon */}
                   <div
-                    className={`w-16 h-16 rounded-xl bg-gradient-to-br ${service.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}
+                    className={`w-12 sm:w-16 h-12 sm:h-16 rounded-xl bg-gradient-to-br ${service.color} p-3 sm:p-4 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}
                   >
                     <IconComponent className="w-full h-full text-white" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-white transition-colors">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 group-hover:text-white transition-colors">
                     {service.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-400 mb-4 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
+                  <p className="text-gray-400 mb-3 sm:mb-4 text-sm sm:text-base leading-relaxed group-hover:text-gray-300 transition-colors">
                     {service.description}
                   </p>
 

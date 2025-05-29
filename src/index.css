@@ -25,10 +25,11 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  padding: 0;
   min-width: 320px;
   min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -53,6 +54,41 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Ensure root elements don't interfere with layout */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: block;
+}
+
+/* Enhanced responsive base styles */
+* {
+  box-sizing: border-box;
+}
+
+/* Prevent horizontal overflow on all elements */
+*,
+*::before,
+*::after {
+  max-width: 100%;
+}
+
+/* Responsive images and media */
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Better text rendering on mobile */
+@media (max-width: 768px) {
+  body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
 }
 
 @media (prefers-color-scheme: light) {

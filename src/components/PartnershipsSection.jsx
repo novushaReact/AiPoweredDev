@@ -70,9 +70,8 @@ const PartnershipsSection = () => {
       },
     },
   };
-
   return (
-    <section className="py-20 bg-slate-800 text-white relative">
+    <section className="py-12 sm:py-16 md:py-20 bg-slate-800 text-white relative">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
@@ -81,22 +80,20 @@ const PartnershipsSection = () => {
             backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px)`,
           }}
         />
-      </div>
-
-      <div className="container mx-auto px-6 relative z-10">
+      </div>      <div className="responsive-container relative z-10">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16 px-4 sm:px-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           {" "}
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
             Trusted by <span className="gradient-text-gold">Innovators</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             We're proud to work with industry-leading technologies and maintain
             the highest standards of security and compliance.
           </p>
@@ -104,7 +101,7 @@ const PartnershipsSection = () => {
 
         {/* Certifications Section */}
         <motion.div
-          className="mb-16"
+          className="mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

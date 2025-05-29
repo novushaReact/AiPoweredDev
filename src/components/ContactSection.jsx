@@ -77,51 +77,50 @@ const ContactSection = () => {
     setTimeout(() => setSubmitStatus(null), 5000);
   };
 
-  return (
-    <section className="py-20 bg-gradient-to-b from-slate-900 to-slate-800 text-white relative overflow-hidden">
+  return (    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-slate-900 to-slate-800 text-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gold/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-cyan-500/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="responsive-container relative z-10">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16 px-4 sm:px-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           {" "}
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
             Let's Build Your{" "}
             <span className="gradient-text-gold">AI-Optimized</span> Future
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Ready to transform your development process? Get a free architecture
             audit and discover how AI can accelerate your project.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-12 max-w-7xl mx-auto">
           {/* Benefits Section */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="order-2 xl:order-1"
           >
-            <h3 className="text-2xl font-bold mb-8">What You Get:</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8">What You Get:</h3>
 
-            <div className="space-y-6 mb-8">
+            <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
               {benefits.map((benefit, index) => {
                 const IconComponent = benefit.icon;
-                return (
-                  <motion.div
+                return (                  <motion.div
                     key={index}
-                    className="flex items-start gap-4 p-4 bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl hover:border-slate-600 transition-all duration-300 group"
+                    className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl hover:border-slate-600 transition-all duration-300 group"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -133,17 +132,17 @@ const ContactSection = () => {
                     }}
                   >
                     <motion.div
-                      className={`${benefit.color} mt-1`}
+                      className={`${benefit.color} mt-1 flex-shrink-0`}
                       whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
                       transition={{ duration: 0.3 }}
                     >
-                      <IconComponent size={24} />
+                      <IconComponent size={20} className="sm:w-6 sm:h-6" />
                     </motion.div>
-                    <div>
-                      <h4 className="text-lg font-semibold mb-2 group-hover:text-white transition-colors">
+                    <div className="min-w-0 flex-1">
+                      <h4 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2 group-hover:text-white transition-colors">
                         {benefit.title}
                       </h4>
-                      <p className="text-gray-400 group-hover:text-gray-300 transition-colors">
+                      <p className="text-sm sm:text-base text-gray-400 group-hover:text-gray-300 transition-colors">
                         {benefit.description}
                       </p>
                     </div>

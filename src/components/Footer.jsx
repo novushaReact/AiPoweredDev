@@ -84,13 +84,12 @@ const Footer = () => {
     },
   };
 
-  return (
-    <footer className="bg-slate-900 text-white border-t border-slate-800">
+  return (    <footer className="bg-slate-900 text-white border-t border-slate-800">
       {/* Main Footer */}
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+      <div className="responsive-container py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 sm:gap-8">
           {/* Brand Section */}
-          <div className="lg:col-span-2">
+          <div className="sm:col-span-2 lg:col-span-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -98,7 +97,7 @@ const Footer = () => {
               transition={{ duration: 0.6 }}
             >
               {" "}
-              <h3 className="text-2xl font-bold mb-4 gradient-text-gold">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 gradient-text-gold">
                 AI Dev Team
               </h3>
               <p className="text-gray-400 mb-6 leading-relaxed">
