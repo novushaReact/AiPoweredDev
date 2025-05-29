@@ -286,7 +286,9 @@ const TeamSection = () => {
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-2 sm:mb-3 mx-auto">
                 <Users className="text-white" size={24} />
               </div>
-              <p className="text-xs sm:text-sm font-semibold">Human Creativity</p>
+              <p className="text-xs sm:text-sm font-semibold">
+                Human Creativity
+              </p>
             </div>
 
             {/* Plus Symbol */}
@@ -308,7 +310,9 @@ const TeamSection = () => {
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-2 sm:mb-3 mx-auto">
                 <Zap className="text-white" size={24} />
               </div>
-              <p className="text-xs sm:text-sm font-semibold">Extraordinary Results</p>
+              <p className="text-xs sm:text-sm font-semibold">
+                Extraordinary Results
+              </p>
             </div>
           </div>
         </motion.div>
