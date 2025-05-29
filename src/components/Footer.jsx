@@ -32,7 +32,7 @@ const Footer = () => {
     {
       name: "Email",
       icon: Mail,
-      url: "mailto:hello@aidevteam.com",
+      url: "mailto:aipowereddevteam@gmail.com",
       color: "hover:text-gold",
     },
   ];
@@ -110,15 +110,15 @@ const Footer = () => {
               <div className="space-y-3 text-sm text-gray-400">
                 <div className="flex items-center gap-3">
                   <MapPin size={16} className="text-gold" />
-                  <span>San Francisco, CA & Remote</span>
+                  <span>Ellis Bridge Ahmedabad 380006</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone size={16} className="text-gold" />
-                  <span>+1 (555) 123-4567</span>
+                  <span>+(91) 9561471054</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail size={16} className="text-gold" />
-                  <span>hello@aidevteam.com</span>
+                  <span>aipowereddevteam@gmail.com</span>
                 </div>
               </div>
             </motion.div>

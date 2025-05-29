@@ -85,7 +85,7 @@ const FloatingCTA = () => {
                     </motion.button>
 
                     <motion.a
-                      href="mailto:hello@aidevteam.com"
+                      href="mailto:aipowereddevteam@gmail.com"
                       className="w-full bg-slate-700 text-white font-medium py-2 px-4 rounded-lg text-sm hover:bg-slate-600 transition-colors flex items-center justify-center"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
