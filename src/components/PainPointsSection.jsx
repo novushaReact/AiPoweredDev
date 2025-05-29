@@ -58,12 +58,12 @@ const PainPointsSection = () => {
       },
     },
   };
-
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 30, scale: 0.9 },
     visible: {
       opacity: 1,
       y: 0,
+      scale: 1,
       transition: {
         duration: 0.6,
         ease: "easeOut",
@@ -95,11 +95,10 @@ const PainPointsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
+          {" "}
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-red-400">
             Stuck in Development{" "}
-            <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
-              Quicksand?
-            </span>
+            <span className="gradient-text-red-orange">Quicksand?</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             We've seen these pain points destroy promising projects. Sound
@@ -121,18 +120,32 @@ const PainPointsSection = () => {
                 key={index}
                 variants={itemVariants}
                 className="group relative"
+                whileHover={{
+                  scale: 1.02,
+                  transition: { duration: 0.2 },
+                }}
+                whileTap={{ scale: 0.98 }}
               >
-                <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl p-6 h-full transition-all duration-300 hover:border-slate-600 hover:bg-slate-800/70 hover:transform hover:scale-105">
+                <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl p-6 h-full transition-all duration-300 hover:border-slate-600 hover:bg-slate-800/70 relative overflow-hidden">
                   {/* Glowing hotspot effect */}
                   <div className="absolute -inset-px bg-gradient-to-r from-red-500/20 via-orange-500/20 to-yellow-500/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
 
+                  {/* Animated background shimmer */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-700" />
+
                   <div className="relative">
                     {/* Icon */}
-                    <div className={`${point.color} mb-4 flex justify-center`}>
-                      <div className="p-3 bg-slate-700/50 rounded-lg">
+                    <motion.div
+                      className={`${point.color} mb-4 flex justify-center`}
+                      whileHover={{
+                        rotate: [0, -5, 5, 0],
+                        transition: { duration: 0.3 },
+                      }}
+                    >
+                      <div className="p-3 bg-slate-700/50 rounded-lg group-hover:bg-slate-600/70 transition-colors duration-300">
                         <IconComponent size={32} />
                       </div>
-                    </div>
+                    </motion.div>
 
                     {/* Title */}
                     <h3 className="text-xl font-semibold mb-3 text-center group-hover:text-white transition-colors">
@@ -146,7 +159,18 @@ const PainPointsSection = () => {
 
                     {/* Pain indicator */}
                     <div className="mt-4 flex justify-center">
-                      <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+                      <motion.div
+                        className="w-2 h-2 bg-red-500 rounded-full"
+                        animate={{
+                          scale: [1, 1.3, 1],
+                          opacity: [0.7, 1, 0.7],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                      />
                     </div>
                   </div>
                 </div>

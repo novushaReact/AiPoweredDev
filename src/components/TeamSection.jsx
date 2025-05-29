@@ -99,17 +99,15 @@ const TeamSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
+          {" "}
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-              Brains + Bots
-            </span>
-            : Meet the Dream Team
+            <span className="gradient-text-cyan-purple">Brains + Bots</span>:
+            Meet the Dream Team
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             We combine human creativity with AI efficiency to deliver
             extraordinary results.
           </p>
-
           {/* Core Message */}
           <div className="inline-flex items-center gap-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-full px-6 py-3">
             <Brain className="text-cyan-400" size={24} />
@@ -130,73 +128,109 @@ const TeamSection = () => {
           {teamMembers.map((member, index) => {
             const IconComponent = member.icon;
             return (
-              <motion.div key={index} variants={itemVariants} className="group">
-                <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 text-center h-full transition-all duration-500 hover:border-slate-600 hover:transform hover:scale-105 hover:bg-slate-800/70">
-                  {/* Profile Image with AI Icon Overlay */}
-                  <div className="relative mb-6 mx-auto w-32 h-32">
-                    {/* Profile placeholder with gradient background */}
-                    <div
-                      className={`w-full h-full rounded-full bg-gradient-to-br ${member.gradient} p-1`}
-                    >
-                      <div className="w-full h-full bg-slate-700 rounded-full flex items-center justify-center">
-                        <Users className="text-gray-400" size={40} />
-                      </div>
-                    </div>
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className="group"
+                whileHover={{
+                  scale: 1.02,
+                  transition: { duration: 0.3, ease: "easeOut" },
+                }}
+              >
+                <div className="relative bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 text-center h-full transition-all duration-500 hover:border-slate-600 hover:bg-slate-800/70 overflow-hidden">
+                  {/* Animated background gradient */}
+                  <div
+                    className={`absolute -inset-1 bg-gradient-to-br ${member.gradient} opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-500`}
+                  />
 
-                    {/* AI Icon Orbiting Effect */}
-                    <motion.div
-                      className="absolute -top-2 -right-2 w-10 h-10 bg-gradient-to-br from-cyan-500 to-purple-500 rounded-full flex items-center justify-center"
-                      animate={{
-                        rotate: 360,
-                        scale: [1, 1.1, 1],
-                      }}
-                      transition={{
-                        rotate: {
-                          duration: 8,
-                          repeat: Infinity,
-                          ease: "linear",
-                        },
-                        scale: {
-                          duration: 2,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                        },
-                      }}
-                    >
-                      <IconComponent className="text-white" size={16} />
-                    </motion.div>
-                  </div>
+                  {/* Shimmer effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-700" />
 
-                  {/* Name & Role */}
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-white transition-colors">
-                    {member.name}
-                  </h3>
-                  <p
-                    className={`text-transparent bg-gradient-to-r ${member.gradient} bg-clip-text font-semibold mb-3`}
-                  >
-                    {member.role}
-                  </p>
-
-                  {/* Expertise */}
-                  <p className="text-gray-400 text-sm mb-4">
-                    {member.expertise}
-                  </p>
-
-                  {/* AI Tools - Shown on Hover */}
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-cyan-400 text-xs font-semibold mb-2">
-                      AI Tools:
-                    </p>
-                    <div className="space-y-1">
-                      {member.aiTools.map((tool, toolIndex) => (
-                        <div
-                          key={toolIndex}
-                          className="text-xs text-gray-400 bg-slate-700/50 rounded px-2 py-1"
-                        >
-                          {tool}
+                  <div className="relative">
+                    {/* Profile Image with AI Icon Overlay */}
+                    <div className="relative mb-6 mx-auto w-32 h-32">
+                      {/* Profile placeholder with gradient background */}
+                      <motion.div
+                        className={`w-full h-full rounded-full bg-gradient-to-br ${member.gradient} p-1`}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <div className="w-full h-full bg-slate-700 rounded-full flex items-center justify-center group-hover:bg-slate-600 transition-colors duration-300">
+                          <Users
+                            className="text-gray-400 group-hover:text-gray-300 transition-colors"
+                            size={40}
+                          />
                         </div>
-                      ))}
+                      </motion.div>
+
+                      {/* AI Icon Orbiting Effect */}
+                      <motion.div
+                        className="absolute -top-2 -right-2 w-10 h-10 bg-gradient-to-br from-cyan-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg"
+                        animate={{
+                          rotate: 360,
+                          scale: [1, 1.1, 1],
+                        }}
+                        transition={{
+                          rotate: {
+                            duration: 8,
+                            repeat: Infinity,
+                            ease: "linear",
+                          },
+                          scale: {
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                          },
+                        }}
+                        whileHover={{ scale: 1.3 }}
+                      >
+                        <IconComponent className="text-white" size={16} />
+                      </motion.div>
                     </div>
+
+                    {/* Name & Role */}
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-white transition-colors">
+                      {member.name}
+                    </h3>
+                    <p
+                      className={`text-transparent bg-gradient-to-r ${member.gradient} bg-clip-text font-semibold mb-3`}
+                    >
+                      {member.role}
+                    </p>
+
+                    {/* Expertise */}
+                    <p className="text-gray-400 text-sm mb-4 group-hover:text-gray-300 transition-colors">
+                      {member.expertise}
+                    </p>
+
+                    {/* AI Tools - Shown on Hover */}
+                    <motion.div
+                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      initial={{ y: 10 }}
+                      whileInView={{ y: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <p className="text-cyan-400 text-xs font-semibold mb-2">
+                        AI Tools:
+                      </p>
+                      <div className="space-y-1">
+                        {member.aiTools.map((tool, toolIndex) => (
+                          <motion.div
+                            key={toolIndex}
+                            className="text-xs text-gray-400 bg-slate-700/50 rounded px-2 py-1 hover:bg-slate-600/50 transition-colors cursor-default"
+                            initial={{ opacity: 0, x: -10 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{
+                              delay: toolIndex * 0.1,
+                              duration: 0.3,
+                            }}
+                            whileHover={{ scale: 1.05 }}
+                          >
+                            {tool}
+                          </motion.div>
+                        ))}
+                      </div>
+                    </motion.div>
                   </div>
                 </div>
               </motion.div>

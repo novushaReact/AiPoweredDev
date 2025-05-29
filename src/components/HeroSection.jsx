@@ -7,7 +7,6 @@ const HeroSection = () => {
       behavior: "smooth",
     });
   };
-
   const floatingAnimation = {
     y: [0, -20, 0],
     rotate: [0, 5, -5, 0],
@@ -18,14 +17,15 @@ const HeroSection = () => {
     },
   };
 
-  const nodeVariants = {
+  const particleVariants = {
     initial: { scale: 0, opacity: 0 },
     animate: {
-      scale: 1,
-      opacity: 1,
+      scale: [0, 1, 1.2, 1],
+      opacity: [0, 1, 0.8, 1],
       transition: {
-        duration: 0.5,
+        duration: 1.5,
         delay: 0.2,
+        ease: "easeOut",
       },
     },
   };
@@ -39,9 +39,10 @@ const HeroSection = () => {
           className="absolute top-20 left-1/4"
           animate={floatingAnimation}
         >
+          {" "}
           <motion.div
             className="w-3 h-3 bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/50"
-            variants={nodeVariants}
+            variants={particleVariants}
             initial="initial"
             animate="animate"
           />
@@ -54,9 +55,10 @@ const HeroSection = () => {
             transition: { ...floatingAnimation.transition, delay: 1 },
           }}
         >
+          {" "}
           <motion.div
             className="w-4 h-4 bg-purple-400 rounded-full shadow-lg shadow-purple-400/50"
-            variants={nodeVariants}
+            variants={particleVariants}
             initial="initial"
             animate="animate"
           />
@@ -69,9 +71,10 @@ const HeroSection = () => {
             transition: { ...floatingAnimation.transition, delay: 2 },
           }}
         >
+          {" "}
           <motion.div
             className="w-2 h-2 bg-green-400 rounded-full shadow-lg shadow-green-400/50"
-            variants={nodeVariants}
+            variants={particleVariants}
             initial="initial"
             animate="animate"
           />
@@ -115,17 +118,15 @@ const HeroSection = () => {
           >
             ✨ As featured in TechCrunch & Dev.to
           </motion.div>
-
-          {/* Main Headline */}
+          {/* Main Headline */}{" "}
           <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-cyan-300 to-purple-300 bg-clip-text text-transparent"
+            className="text-5xl md:text-7xl font-bold mb-6 gradient-text-cyan-purple text-shadow-cyan"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             AI-Powered Development
           </motion.h1>
-
           <motion.h2
             className="text-2xl md:text-3xl font-medium mb-4"
             initial={{ opacity: 0, y: 20 }}
@@ -134,7 +135,6 @@ const HeroSection = () => {
           >
             Ship Faster, Scale Smarter
           </motion.h2>
-
           {/* Sub-headline */}
           <motion.p
             className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl leading-relaxed"
@@ -146,7 +146,6 @@ const HeroSection = () => {
             <span className="text-cyan-400 font-semibold">3x faster</span> with
             AI-augmented teams.
           </motion.p>
-
           {/* AI Capabilities Showcase */}
           <motion.div
             className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 w-full max-w-2xl"
@@ -167,11 +166,10 @@ const HeroSection = () => {
               <span className="text-sm">Zero-Downtime DevOps</span>
             </div>
           </motion.div>
-
-          {/* CTA Button */}
+          {/* CTA Button */}{" "}
           <motion.button
             onClick={scrollToNext}
-            className="group bg-gradient-to-r from-gold to-yellow-500 text-black font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:shadow-lg hover:shadow-gold/50 hover:scale-105"
+            className="group bg-gradient-to-r from-gold to-yellow-500 text-black font-semibold px-8 py-4 rounded-full text-lg btn-glow-gold hover:scale-105"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
@@ -184,7 +182,6 @@ const HeroSection = () => {
               size={20}
             />
           </motion.button>
-
           {/* Stats Counter */}
           <motion.div
             className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-8 text-center"

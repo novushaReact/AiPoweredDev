@@ -67,6 +67,74 @@ html {
   background-clip: text;
 }
 
+/* Enhanced gradient text with better visibility */
+.gradient-text-gold {
+  background: linear-gradient(90deg, #fbbf24, #ffd700, #fbbf24);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: gradient-shift 3s ease-in-out infinite;
+  font-weight: 800;
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+  will-change: background-position;
+  contain: layout style paint;
+}
+
+.gradient-text-cyan-purple {
+  background: linear-gradient(90deg, #67e8f9, #06b6d4, #a855f7);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: gradient-shift 3s ease-in-out infinite;
+  font-weight: 800;
+  text-shadow: 0 0 30px rgba(6, 182, 212, 0.3);
+  will-change: background-position;
+  contain: layout style paint;
+}
+
+.gradient-text-red-orange {
+  background: linear-gradient(90deg, #f87171, #ef4444, #fb923c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: gradient-shift 3s ease-in-out infinite;
+  font-weight: 800;
+  text-shadow: 0 0 30px rgba(239, 68, 68, 0.3);
+  will-change: background-position;
+  contain: layout style paint;
+}
+
+/* Fallback for browsers that don't support background-clip: text */
+@supports not (-webkit-background-clip: text) {
+  .gradient-text-gold {
+    color: #ffd700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  }
+
+  .gradient-text-cyan-purple {
+    color: #06b6d4;
+    text-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+  }
+
+  .gradient-text-red-orange {
+    color: #ef4444;
+    text-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+  }
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
 /* Custom animations for components */
 @keyframes slideInFromLeft {
   0% {
@@ -174,4 +242,82 @@ html {
 .btn-secondary:hover {
   background: #ffd700;
   color: #000;
+}
+
+/* Additional visibility enhancements */
+.text-shadow-glow {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+    0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.text-shadow-gold {
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.4),
+    0 0 30px rgba(255, 215, 0, 0.2);
+}
+
+.text-shadow-cyan {
+  text-shadow: 0 0 10px rgba(6, 182, 212, 0.6), 0 0 20px rgba(6, 182, 212, 0.4),
+    0 0 30px rgba(6, 182, 212, 0.2);
+}
+
+/* Enhanced button animations */
+.btn-glow-gold {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-glow-gold:hover {
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.6), 0 0 60px rgba(255, 215, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Enhanced form focus states */
+.form-input-enhanced {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.form-input-enhanced:focus {
+  border-color: #ffd700;
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1), 0 0 20px rgba(255, 215, 0, 0.3);
+  transform: scale(1.02);
+}
+
+/* Performance optimizations for animations */
+.motion-safe {
+  will-change: transform;
+}
+
+.motion-safe:hover {
+  will-change: transform, opacity;
+}
+
+.motion-safe.animation-complete {
+  will-change: auto;
+}
+
+/* Optimized transform properties */
+.transform-gpu {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Reduce paint flashing for gradient animations */
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient-text-gold,
+  .gradient-text-cyan-purple,
+  .gradient-text-red-orange {
+    animation: none;
+  }
+
+  .floating-optimized {
+    will-change: auto;
+    transform: none;
+  }
 }

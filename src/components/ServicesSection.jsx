@@ -136,12 +136,10 @@ const ServicesSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
+          {" "}
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Build the{" "}
-            <span className="bg-gradient-to-r from-gold to-yellow-400 bg-clip-text text-transparent">
-              Impossible
-            </span>
-            . Prove It First.
+            Build the <span className="gradient-text-gold">Impossible</span>.
+            Prove It First.
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Don't just take our word for it. Experience our expertise through

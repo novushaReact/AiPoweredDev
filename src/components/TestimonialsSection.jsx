@@ -108,11 +108,9 @@ const TestimonialsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
+          {" "}
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Client{" "}
-            <span className="bg-gradient-to-r from-gold to-yellow-400 bg-clip-text text-transparent">
-              Success Stories
-            </span>
+            Client <span className="gradient-text-gold">Success Stories</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Don't just take our word for it. Hear from the leaders who've

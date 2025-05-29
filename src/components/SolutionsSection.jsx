@@ -77,11 +77,9 @@ const SolutionsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
+          {" "}
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Your AI{" "}
-            <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-              Cavalry
-            </span>{" "}
+            Your AI <span className="gradient-text-cyan-purple">Cavalry</span>{" "}
             Has Arrived
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -102,44 +100,63 @@ const SolutionsSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: solution.delay }}
                 className="group"
+                whileHover={{
+                  scale: 1.03,
+                  transition: { duration: 0.3, ease: "easeOut" },
+                }}
               >
-                <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 h-full transition-all duration-500 hover:border-slate-600 hover:transform hover:scale-105 hover:bg-slate-800/70">
-                  {/* Icon with gradient background */}
+                <div className="relative bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 h-full transition-all duration-500 hover:border-slate-600 hover:bg-slate-800/70 overflow-hidden">
+                  {/* Animated background glow */}
                   <div
-                    className={`w-16 h-16 rounded-xl bg-gradient-to-br ${solution.color} p-4 mb-6 mx-auto group-hover:scale-110 transition-transform duration-300`}
-                  >
-                    <IconComponent className="w-full h-full text-white" />
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-2xl font-bold mb-4 text-center group-hover:text-white transition-colors">
-                    {solution.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-gray-300 text-center mb-6 leading-relaxed">
-                    {solution.description}
-                  </p>
-
-                  {/* Features */}
-                  <ul className="space-y-2">
-                    {solution.features.map((feature, featureIndex) => (
-                      <li
-                        key={featureIndex}
-                        className="flex items-center gap-3 text-sm text-gray-400"
-                      >
-                        <div
-                          className={`w-2 h-2 rounded-full bg-gradient-to-r ${solution.color}`}
-                        />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Hover effect overlay */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${solution.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}
+                    className={`absolute -inset-1 bg-gradient-to-br ${solution.color} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500`}
                   />
+
+                  {/* Content overlay shimmer */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-1000" />
+
+                  <div className="relative">
+                    {/* Icon with gradient background */}
+                    <motion.div
+                      className={`w-16 h-16 rounded-xl bg-gradient-to-br ${solution.color} p-4 mb-6 mx-auto`}
+                      whileHover={{
+                        scale: 1.1,
+                        rotate: [0, -5, 5, 0],
+                        transition: { duration: 0.4 },
+                      }}
+                    >
+                      <IconComponent className="w-full h-full text-white" />
+                    </motion.div>
+
+                    {/* Title */}
+                    <h3 className="text-2xl font-bold mb-4 text-center group-hover:text-white transition-colors">
+                      {solution.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-gray-300 text-center mb-6 leading-relaxed group-hover:text-gray-200 transition-colors">
+                      {solution.description}
+                    </p>
+
+                    {/* Features */}
+                    <ul className="space-y-3">
+                      {solution.features.map((feature, featureIndex) => (
+                        <motion.li
+                          key={featureIndex}
+                          className="flex items-center gap-3 text-sm text-gray-400 group-hover:text-gray-300 transition-colors"
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.1 * featureIndex }}
+                        >
+                          <motion.div
+                            className={`w-2 h-2 rounded-full bg-gradient-to-r ${solution.color}`}
+                            whileHover={{ scale: 1.5 }}
+                            transition={{ duration: 0.2 }}
+                          />
+                          {feature}
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </motion.div>
             );

@@ -92,11 +92,9 @@ const PartnershipsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
+          {" "}
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Trusted by{" "}
-            <span className="bg-gradient-to-r from-gold to-yellow-400 bg-clip-text text-transparent">
-              Innovators
-            </span>
+            Trusted by <span className="gradient-text-gold">Innovators</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             We're proud to work with industry-leading technologies and maintain

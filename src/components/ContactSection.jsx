@@ -94,12 +94,10 @@ const ContactSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
+          {" "}
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Let's Build Your{" "}
-            <span className="bg-gradient-to-r from-gold to-yellow-400 bg-clip-text text-transparent">
-              AI-Optimized
-            </span>{" "}
-            Future
+            <span className="gradient-text-gold">AI-Optimized</span> Future
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Ready to transform your development process? Get a free architecture
@@ -123,20 +121,31 @@ const ContactSection = () => {
                 return (
                   <motion.div
                     key={index}
-                    className="flex items-start gap-4 p-4 bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl hover:border-slate-600 transition-colors"
+                    className="flex items-start gap-4 p-4 bg-slate-800/30 backdrop-blur-sm border border-slate-700 rounded-xl hover:border-slate-600 transition-all duration-300 group"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
+                    whileHover={{
+                      scale: 1.02,
+                      backgroundColor: "rgba(30, 41, 59, 0.5)",
+                      transition: { duration: 0.2 },
+                    }}
                   >
-                    <div className={`${benefit.color} mt-1`}>
+                    <motion.div
+                      className={`${benefit.color} mt-1`}
+                      whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
+                      transition={{ duration: 0.3 }}
+                    >
                       <IconComponent size={24} />
-                    </div>
+                    </motion.div>
                     <div>
-                      <h4 className="text-lg font-semibold mb-2">
+                      <h4 className="text-lg font-semibold mb-2 group-hover:text-white transition-colors">
                         {benefit.title}
                       </h4>
-                      <p className="text-gray-400">{benefit.description}</p>
+                      <p className="text-gray-400 group-hover:text-gray-300 transition-colors">
+                        {benefit.description}
+                      </p>
                     </div>
                   </motion.div>
                 );
@@ -188,61 +197,78 @@ const ContactSection = () => {
               onSubmit={handleSubmit}
               className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8"
             >
+              {" "}
               {/* Name Input */}
-              <div className="mb-6">
+              <motion.div
+                className="mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
                 <label
                   htmlFor="name"
                   className="block text-sm font-semibold mb-2"
                 >
                   Full Name *
-                </label>
-                <input
+                </label>{" "}
+                <motion.input
                   type="text"
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg focus:border-gold focus:ring-1 focus:ring-gold focus:outline-none transition-colors text-white placeholder-gray-400"
+                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg form-input-enhanced text-white placeholder-gray-400"
                   placeholder="Enter your full name"
+                  whileFocus={{ scale: 1.01 }}
                 />
-              </div>
-
+              </motion.div>
               {/* Email Input */}
-              <div className="mb-6">
+              <motion.div
+                className="mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
                 <label
                   htmlFor="email"
                   className="block text-sm font-semibold mb-2"
                 >
                   Email Address *
-                </label>
-                <input
+                </label>{" "}
+                <motion.input
                   type="email"
                   id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg focus:border-gold focus:ring-1 focus:ring-gold focus:outline-none transition-colors text-white placeholder-gray-400"
+                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg form-input-enhanced text-white placeholder-gray-400"
                   placeholder="your@email.com"
+                  whileFocus={{ scale: 1.01 }}
                 />
-              </div>
-
+              </motion.div>
               {/* Challenge Dropdown */}
-              <div className="mb-6">
+              <motion.div
+                className="mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
                 <label
                   htmlFor="challenge"
                   className="block text-sm font-semibold mb-2"
                 >
                   What's keeping you up at night? *
                 </label>
-                <select
+                <motion.select
                   id="challenge"
                   name="challenge"
                   value={formData.challenge}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg focus:border-gold focus:ring-1 focus:ring-gold focus:outline-none transition-colors text-white"
+                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg focus:border-gold focus:ring-1 focus:ring-gold focus:outline-none transition-all duration-300 text-white"
+                  whileFocus={{ scale: 1.01 }}
                 >
                   <option value="">Select your main challenge</option>
                   {challenges.map((challenge) => (
@@ -250,28 +276,32 @@ const ContactSection = () => {
                       {challenge.icon} {challenge.label}
                     </option>
                   ))}
-                </select>
-              </div>
-
+                </motion.select>
+              </motion.div>
               {/* Message Input */}
-              <div className="mb-6">
+              <motion.div
+                className="mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
                 <label
                   htmlFor="message"
                   className="block text-sm font-semibold mb-2"
                 >
                   Project Details
                 </label>
-                <textarea
+                <motion.textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={4}
-                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg focus:border-gold focus:ring-1 focus:ring-gold focus:outline-none transition-colors text-white placeholder-gray-400 resize-none"
+                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg focus:border-gold focus:ring-1 focus:ring-gold focus:outline-none transition-all duration-300 text-white placeholder-gray-400 resize-none"
                   placeholder="Tell us about your project, current challenges, and goals..."
+                  whileFocus={{ scale: 1.01 }}
                 />
-              </div>
-
+              </motion.div>
               {/* Honeypot field (hidden) */}
               <input
                 type="text"
@@ -280,7 +310,6 @@ const ContactSection = () => {
                 tabIndex="-1"
                 autoComplete="off"
               />
-
               {/* Submit Button */}
               <motion.button
                 type="submit"
@@ -301,19 +330,20 @@ const ContactSection = () => {
                   </>
                 )}
               </motion.button>
-
-              {/* Status Messages */}
+              {/* Status Messages */}{" "}
               {submitStatus === "success" && (
                 <motion.div
-                  className="mt-4 p-4 bg-green-500/20 border border-green-500/30 rounded-lg flex items-center gap-3 text-green-400"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-4 p-4 bg-green-500/30 border-2 border-green-400/50 rounded-lg flex items-center gap-3 text-green-300 shadow-lg shadow-green-500/20"
+                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
                 >
-                  <CheckCircle size={20} />
-                  <span>Thank you! We'll respond within 2 hours.</span>
+                  <CheckCircle size={24} className="text-green-400" />
+                  <span className="font-medium text-lg">
+                    Thank you! We'll respond within 2 hours.
+                  </span>
                 </motion.div>
               )}
-
               {submitStatus === "error" && (
                 <motion.div
                   className="mt-4 p-4 bg-red-500/20 border border-red-500/30 rounded-lg flex items-center gap-3 text-red-400"
@@ -324,7 +354,6 @@ const ContactSection = () => {
                   <span>Something went wrong. Please try again.</span>
                 </motion.div>
               )}
-
               {/* Trust Signal */}
               <p className="text-xs text-gray-500 mt-4 text-center">
                 🔒 Protected by reCAPTCHA and our Privacy Policy. We never spam.

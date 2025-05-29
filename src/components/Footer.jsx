@@ -97,7 +97,8 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-gold to-yellow-400 bg-clip-text text-transparent">
+              {" "}
+              <h3 className="text-2xl font-bold mb-4 gradient-text-gold">
                 AI Dev Team
               </h3>
               <p className="text-gray-400 mb-6 leading-relaxed">
@@ -105,7 +106,6 @@ const Footer = () => {
                 We combine human creativity with artificial intelligence to
                 deliver extraordinary results.
               </p>
-
               {/* Contact Info */}
               <div className="space-y-3 text-sm text-gray-400">
                 <div className="flex items-center gap-3">
